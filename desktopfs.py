@@ -1,10 +1,23 @@
 #!/usr/bin/python -S
 # -*- coding: utf-8 -*-
 
+"""A FUSE filesystem to show the XDG menu structure in your file browser.
+
+Currently read-only and only working for the Applications subtree.
+
+Copyright (C) Nicholas Booker <NMBooker@gmail.com>
+
+License: MIT
+"""
+
+# Hack to make xdg.Menu.parse work properly
+# hack also consists of the '#!/usr/bin/python -S' line up top
 import sys
 sys.setdefaultencoding('utf-8')
 import site
+# End of hack to make xdg.Menu.parse work properly
 
+import sys
 import errno  
 import fuse  
 import stat  
